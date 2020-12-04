@@ -15,6 +15,23 @@ body{
     display: flex;
     flex-direction: column;
     font-family: JetBrains Mono;
+    color: aliceblue;
+    overflow: hidden;
+}
+.fa-snowflake {
+    animation: fall linear forwards;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    
+    /* position: absolute;
+    top: -20px; */
+}
+
+@keyframes fall {
+    to{
+        transform: translateY(100vh);
+    }
 }
 
 .countdown-container{

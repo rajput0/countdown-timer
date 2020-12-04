@@ -24,7 +24,21 @@ function updateScreen(){
 updateScreen()
 setInterval(updateScreen, 1000)
 
+function createSnowFlake(){
+    const snow_flake = document.createElement('i');
+    snow_flake.classList.add('fas');
+    snow_flake.classList.add('fa-snowflake');
+    snow_flake.style.left = Math.random() * (window.innerWidth) + 'px';
+    let size = (Math.random() * 7 + 7)
+    snow_flake.style.fontSize = size + 'px'
+    snow_flake.style.animationDuration = (Math.random() * size + 3) + 's';
+    snow_flake.style.opacity = (Math.random() * size) / 8;
+    
+    document.body.appendChild(snow_flake)
+    setTimeout(()=>{snow_flake.remove()}, 7900)
+}
 
+setInterval(createSnowFlake,80)
 
 //console.log(`Hours ${hours} Mins ${mins} Seconds ${seconds} Days ${Math.floor(days)}`)
 
