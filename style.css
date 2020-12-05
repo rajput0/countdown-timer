@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
 
 *{
     box-sizing: border-box;
@@ -7,20 +8,19 @@
 
 body{
     /* font-family: Arial, Helvetica, sans-serif; */
-    background: url(background.jpg);
+    background-image: url(https://source.unsplash.com/1920x1080/?christmas,dark);
     background-size: cover;
     background-position: center center;
     height: 100vh;
     margin: 0px;
     display: flex;
     flex-direction: column;
-    font-family: JetBrains Mono;
-    color: aliceblue;
+    font-family: 'Syne Mono', monospace;
     overflow: hidden;
 }
 .fa-snowflake {
     animation: fall linear forwards;
-    color: #fff;
+    color: snow;
     position: absolute;
     top: 0px;
     
@@ -38,11 +38,15 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    color: white;
+    mix-blend-mode: difference;
 }
 
 h1{
     font-size: 4rem;
     text-align: center;
+    color: white;
+    mix-blend-mode: difference;
 }
 
 .digits{
