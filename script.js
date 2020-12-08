@@ -1,25 +1,17 @@
-// let today = new Date()
-// let christmas = new Date('2020-12-25')
 
-// let seconds = (christmas - today)/1000/8600
-// let mins = (christmas - today)/1000/60
-// let hours = (christmas - today)/1000/60/60
-// let days = (christmas - today)/1000/60/60/24
-
-
+let eventDate = new Date('2020-12-25 5:00:00 PM')
 function updateScreen(){
     let today = new Date()
-    let christmas = new Date('2020-12-25 5:00:00 PM')
 
-    let seconds = Math.floor((christmas - today)/1000 % 60)
-    let mins = Math.floor((christmas - today)/1000/60 % 60)
-    let hours = Math.floor((christmas - today)/1000/60/60 % 24)
-    let days = Math.floor((christmas - today)/1000/60/60/24)
+    let seconds = Math.floor((eventDate - today)/1000 % 60)
+    let mins = Math.floor((eventDate - today)/1000/60 % 60)
+    let hours = Math.floor((eventDate - today)/1000/60/60 % 24)
+    let days = Math.floor((eventDate - today)/1000/60/60/24)
     document.getElementById('days').innerHTML = Math.floor(days)
     document.getElementById('hours').innerHTML = Math.floor(hours)
     document.getElementById('minutes').innerHTML =Math.floor(mins)
     document.getElementById('seconds').innerHTML = Math.floor(seconds)
-    console.log(days, hours, mins, seconds)
+    // console.log(days, hours, mins, seconds)
 }
 updateScreen()
 setInterval(updateScreen, 1000)
@@ -30,7 +22,7 @@ function createSnowFlake(){
     snow_flake.classList.add('fa-snowflake');
     snow_flake.style.left = Math.random() * (window.innerWidth) + 'px';
 
-    let size = (Math.random() * 19 + 7)
+    let size = (Math.random() * 12 + 7)
     snow_flake.style.fontSize = size + 'px'
     snow_flake.style.animationDuration = (Math.random() * size + 3) + 's';
     snow_flake.style.opacity = (Math.random() * size) / 10;
@@ -40,6 +32,14 @@ function createSnowFlake(){
 }
 
 setInterval(createSnowFlake,100)
+
+function changeEvent(){
+    let event = (document.getElementById('addEvent').value).toUpperCase()
+    let time = document.getElementById('addTime').value
+    document.getElementById('event-name').innerHTML = event
+    eventDate = new Date(time)
+    console.log(event, time)
+}
 
 //console.log(`Hours ${hours} Mins ${mins} Seconds ${seconds} Days ${Math.floor(days)}`)
 

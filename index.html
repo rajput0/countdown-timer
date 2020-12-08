@@ -10,24 +10,35 @@
 </head>
 <body>
     <i class="fas fa-snowflake"></i>
-    <h1>Christmas Eve </h1>
+    <h1 id='event-name'>Christmas Eve </h1>
     <div class="countdown-container">
-        <div class="days-container">
+        <div class="days-container single-units">
             <p class="digits" id="days">00</p>
             <span>DAYS</span>
         </div>
-        <div class="hours-container">
+        <div class="hours-container single-units">
             <p class="digits" id="hours">00</p>
             <span>HOURS</span>
         </div>
-        <div class="minutes-container">
+        <div class="minutes-container single-units">
             <p class="digits" id="minutes">00</p>
             <span>MINUTES</span>
         </div>
-        <div class="seconds-container">
+        <div class="seconds-container single-units">
             <p class="digits" id="seconds">00</p>
             <span>SECONDS</span>
         </div>
     </div>
+    <div id="add-form">
+        <!-- <label for="addEvent" class="add-form-label">Add Event</label> -->
+       
+            <input class="input-addForm" type="text" id="addEvent" name="eventName" placeholder="Event Name" required>
+            <input class="input-addForm" type="date" id="addTime" name="eventTime" placeholder="Event Time" required>
+            <button class="input-addForm button" id='button_submit' onclick="changeEvent()"> Submit </button>
+        <!-- <label for="addTime" class="add-form-label">Add Time</label> -->
+        <!-- <input class="add-form-input" type="text" id="addTime" name="eventTime" required> -->
+     
+    </div>
+    <div id="overlay"></div>
 </body>
 </html>

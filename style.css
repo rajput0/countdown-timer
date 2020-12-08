@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Texturina:wght@600&display=swap');
 
 
 *{
@@ -6,17 +6,30 @@
     
 }
 
+/* create a black overlay, so the fonts looks clear */
+#overlay{
+    background-color: black;
+    /* background-size: cover;
+    background-position: center center; */
+    position: absolute;
+    opacity: 0.4;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
 body{
-    /* font-family: Arial, Helvetica, sans-serif; */
-    background-image: url(https://source.unsplash.com/1920x1080/?christmas,dark);
+    background-image: url(https://source.unsplash.com/1920x1080/?christmas,snow);
+    /* background-image: url('background.jpg'); */
     background-size: cover;
     background-position: center center;
     height: 100vh;
     margin: 0px;
     display: flex;
     flex-direction: column;
-    font-family: 'Syne Mono', monospace;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Texturina', serif;
     overflow: hidden;
+
 }
 .fa-snowflake {
     animation: fall linear forwards;
@@ -39,35 +52,69 @@ body{
     flex-direction: row;
     justify-content: center;
     color: white;
-    mix-blend-mode: difference;
+    
+    /* mix-blend-mode: exclusion; */
 }
 
 h1{
     font-size: 4rem;
     text-align: center;
     color: white;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
 }
 
 .digits{
     font-size: 6rem;
     line-height: 1;
-    margin: 0 2rem;
+    margin: 1rem 2rem;
 }
 
-.hours-container{
-    text-align: center;
-    
-}
-
-.minutes-container{
+.single-units{
     text-align: center;
 }
 
-.seconds-container{
-    text-align: center;
+
+
+#add-form{
+    /* position: absolute;
+    top: 80%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
 }
 
-.days-container{
+.input-addForm{
     text-align: center;
+    padding: 8px 15px;
+    margin: 15px;
+    font-family: consolas;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: black;
+}
+
+.input-addForm:focus{
+    outline: none;
+    transition: 1s;
+    border: 2px gray solid;
+    background-color: rgb(223, 188, 188);
+}
+
+.button{
+    background-color: rgb(135, 187, 202);
+    outline: none;
+    border: rgb(43, 92, 182) 2px solid;
+}
+
+.button:hover{
+    outline: none;
+    transition: 0.5s;
+    background-color: rgb(37, 141, 211);
+    color: lightblue;
+}
+
+.button:onclick{
+    outline: none;
+    padding: 4px 6px 6px 6px;
 }
