@@ -22,7 +22,7 @@ function createSnowFlake(){
     snow_flake.classList.add('fa-snowflake');
     snow_flake.style.left = Math.random() * (window.innerWidth) + 'px';
 
-    let size = (Math.random() * 12 + 7)
+    let size = (Math.random() * 10 + 5)
     snow_flake.style.fontSize = size + 'px'
     snow_flake.style.animationDuration = (Math.random() * size + 3) + 's';
     snow_flake.style.opacity = (Math.random() * size) / 10;
@@ -34,11 +34,22 @@ function createSnowFlake(){
 setInterval(createSnowFlake,100)
 
 function changeEvent(){
+    document.getElementById('no-time-entered').style.display = 'none';
+    document.getElementById('timer-div').style.display = 'flex';
+
     let event = (document.getElementById('addEvent').value).toUpperCase()
     let time = document.getElementById('addTime').value
+    //console.log(time)
+    if(time=="") {
+        document.getElementById('no-time-entered').style.display = 'initial';
+        // document.getElementById('no-time-entered').style.textAlign = 'center';
+        document.getElementById('timer-div').style.display = 'none';
+    }
+    if(event=="") event = "YOUR EVENT"
     document.getElementById('event-name').innerHTML = event
     eventDate = new Date(time)
     console.log(event, time)
+    
 }
 
 //console.log(`Hours ${hours} Mins ${mins} Seconds ${seconds} Days ${Math.floor(days)}`)
