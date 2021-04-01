@@ -1,5 +1,5 @@
 
-let eventDate = new Date('2020-12-25 5:00:00 PM')
+let eventDate = new Date('2021-12-25 5:00:00 PM')
 function updateScreen(){
     let today = new Date()
 
